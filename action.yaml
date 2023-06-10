@@ -41,6 +41,9 @@ runs:
 
           # Set environment variables - works in the same job
           "IconsOutput=$($res -join ',')" >> $env:GITHUB_ENV
+          
+          # Set output variables
+          "IconResult=$($res -join ',')" >> $env:GITHUB_OUTPUT
         }
         catch {
           Write-Output "::error file=MommaScript.ps1::Failed to run MommaScript!"
